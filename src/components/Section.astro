@@ -1,0 +1,35 @@
+---
+const { name, title, seeAllUrl = "", fullwidth } = Astro.props;
+---
+
+<section id={name}>
+  <div class="heading">
+    <h2>{title}</h2>
+    {seeAllUrl && <a href={seeAllUrl} class="see-all">Tout voir</a>}
+  </div>
+  <slot />
+</section>
+
+<style lang="scss">
+  section {
+    width: 80%;
+    margin: 0 auto;
+
+    &[id] {
+      &:where([style*="--fullwidth:true"]) {
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    
+
+    .see-all {
+        text-decoration: underline;
+    }
+
+    .heading {
+        margin-bottom: 24px;
+    }
+  }
+</style>

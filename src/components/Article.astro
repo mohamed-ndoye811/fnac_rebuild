@@ -1,0 +1,73 @@
+---
+import { ArrowUpRight } from "lucide-astro";
+---
+
+<div class="article article-card">
+  <img src="img/news.png" alt="" />
+  <div class="content">
+    <div class="title-categ">
+      <div class="categ">Culture & loisirs</div>
+      <div class="title">Le top des nouveautés de mai BD & BD jeunesse</div>
+    </div>
+    <p>
+      Le mois de mai s'annonce foisonnant pour les amateurs de bande dessinée.
+      Récits d'aventure, introspections touchantes et fresques fantastiques :
+      notre sélection conjugue puissance narrative et maîtrise graphique. Zoom
+      sur les titres à ne pas manquer pour attendre l'été et agrandir sa
+      collection de BD !
+    </p>
+    <a href="#"><ArrowUpRight />Lire la suite</a>
+  </div>
+</div>
+
+<style lang="scss">
+  .article {
+    &-card {
+      padding: 16px;
+      background-color: var(--clr-secondary);
+      color: var(--clr-primary);
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+      }
+
+      .content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        p {
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-weight: 450;
+        }
+
+        .title {
+          font-size: 18px;
+          font-weight: 800;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1;
+        }
+
+        .categ {
+          font-size: 14px;
+          font-weight: 400;
+          opacity: 0.6;
+        }
+      }
+
+      a {
+        color: var(--clr-accent);
+      }
+    }
+  }
+</style>

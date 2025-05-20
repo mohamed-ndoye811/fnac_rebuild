@@ -1,0 +1,20 @@
+---
+import Section from "./Section.astro"
+import Article from "./Article.astro"
+---
+
+<Section name="nos-articles" title="Nos actualités" seeAllUrl="#">
+    <div class="article-list">
+        <Article/>
+        <Article/>
+        <Article/>
+    </div>
+</Section>
+
+<style lang="scss">
+    .article-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+</style>

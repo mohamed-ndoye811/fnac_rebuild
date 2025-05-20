@@ -1,0 +1,63 @@
+---
+const {
+  name,
+  price,
+  rating,
+  offerFrom,
+  brand,
+  image,
+  type = "card",
+} = Astro.props;
+
+function getPrice(val: number) {
+    return new Intl.NumberFormat("fr-FR", {
+            style: "currency",
+            currency: "EUR",
+          }).format(val)
+}
+---
+
+<div class="product product-card">
+  <img src={image} />
+  <div class="details">
+    <div class="infos">
+      <div class="brand">{brand}</div>
+      <div class="name">{name}</div>
+    </div>
+    <div class="prices">
+      <div class="rating"></div>
+      <div class="price">
+        {getPrice(price)}
+      </div>
+      <div class="offer-from">Offres à partir de <span>{getPrice(offerFrom)}</span></div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .product {
+    &-card {
+      img {
+        width: 192px;
+        aspect-ratio: 1;
+      }
+
+      .price {
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      .offer-from {
+        span {
+          font-weight: 800;
+        }
+      }
+
+      .brand {
+        font-weight: 400;
+        opacity: 0.6;
+        line-height: 1;
+      }
+    }
+  }
+</style>

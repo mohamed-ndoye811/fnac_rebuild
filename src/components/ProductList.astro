@@ -1,0 +1,21 @@
+---
+import Product from "./Product.astro";
+import productsList from "../data/products.js";
+import type { ProductType } from "../types/Product.type";
+const { name, products } = Astro.props;
+---
+
+<div class="product-list">
+  {
+    productsList.map((product: ProductType) => {
+      return <Product {...product} />;
+    })
+  }
+</div>
+
+<style lang="scss">
+  .product-list {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

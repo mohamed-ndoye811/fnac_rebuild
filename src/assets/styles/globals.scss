@@ -1,0 +1,30 @@
+@import url('../fonts/font-face.css');
+
+:root {
+  --clr-primary: #fcf7ee;
+  --clr-secondary: #1a1305;
+  --clr-dimmed-bg: rgba(26, 19, 5, 0.1);
+  --clr-accent: #dfa120;
+  --clr-accent-sec: #007453;
+  --clr-accent-third: #a22a2c;
+}
+
+html, body {
+    font-family: "Aspekta";
+    letter-spacing: -0.32px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 0;
+    line-height: 1;
+}

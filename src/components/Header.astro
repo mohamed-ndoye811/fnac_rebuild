@@ -1,0 +1,103 @@
+---
+import { Search, User, ShoppingCart } from "lucide-astro";
+import HeaderLogo from "../assets/icons/logo.svg";
+---
+
+<header>
+  <a class="logo"><HeaderLogo /></a>
+  <div class="searchbar">
+    <Search />
+    <input type="text" placeholder="Chercher un produit"/>
+    <span>ctrl + k</span>
+  </div>
+  <ul class="user-actions">
+    <li><a href=""> <User /> Se connecter</a></li>
+    <li><a href=""><ShoppingCart /> Mon panier</a></li>
+  </ul>
+  <button id="nav-toggle">Tous nos rayons</button>
+  <nav>
+    <ul>
+      <ul>
+        <li class="title">Section</li>
+        <li><a href="">Accueil</a></li>
+        <li><a href="">Qui sommes-nous</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background-color: var(--clr-primary);
+    position: relative;
+    border-bottom: 8px solid var(--secondary, #dfa120);
+
+    #nav-toggle {
+      all: unset;
+      background-color: var(--clr-secondary);
+      color: var(--clr-primary);
+      padding: 8px 24px;
+      position: absolute;
+      left: 50%;
+      top: 105%;
+      translate: -50% -50%;
+      cursor: pointer;
+    }
+
+    .searchbar {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      background-color: var(--clr-dimmed-bg);
+      border-radius: 6px;
+      width: 30%;
+
+      span {
+        white-space: nowrap;
+      }
+
+      input {
+        padding: 16px 12px;
+        all: unset;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        a {
+            gap: 8px;
+            font-weight: 600;
+        }
+      }
+    }
+
+    nav {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+</style>
