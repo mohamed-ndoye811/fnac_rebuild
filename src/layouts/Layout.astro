@@ -1,46 +1,50 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import "../assets/styles/globals.scss"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../assets/styles/globals.scss";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<Footer />
-		<div class="borders"></div>
-	</body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Découvrez le casque Bluetooth Auralis One sur Fnac Plus : design sobre, son haute fidélité, autonomie longue durée et livraison rapide offerte. Profitez des conseils d'experts et d'accessoires inclus."
+    />
+    <title>Fnac - Produits culturels, high-tech et électroménager en ligne</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <div class="borders"></div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: var(--clr-primary);
-		color: var(--clr-secondary);
-		box-sizing: border-box;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+    box-sizing: border-box;
+  }
 
-	.borders {
-		position: fixed;
-		pointer-events: none;
-		box-sizing: border-box;
-		width: 100vw;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		z-index: 1000;
-		border: 8px solid var(--secondary, #dfa120);
-	}
+  .borders {
+    position: fixed;
+    pointer-events: none;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border: 8px solid var(--secondary, #dfa120);
+  }
 </style>
